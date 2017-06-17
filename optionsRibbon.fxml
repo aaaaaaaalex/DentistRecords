@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<MenuBar fx:id="menuBar" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OptionsController">
+
+    <Menu text="%file">
+        <MenuItem onAction="#save" text="%save" />
+        <SeparatorMenuItem />
+        <Menu text="%report">
+            <MenuItem onAction="#triggerReport" text="%Full report" />
+            <MenuItem onAction="#triggerFilteredReport" text="%Filtered Report" />
+        </Menu>
+        <SeparatorMenuItem />
+        <MenuItem onAction="#exit" text="%exit" />
+    </Menu>
+    <Menu text="%Maintenance">
+        <MenuItem onAction="#maintainProcs" text="%procedures" />
+        <Menu text="%localeRequiresRetart">
+            <RadioMenuItem id="en" onAction="#changeLanguage" text="English">
+            <toggleGroup>
+               <ToggleGroup fx:id="lang" />
+            </toggleGroup></RadioMenuItem>
+            <RadioMenuItem id="ga" onAction="#changeLanguage" text="Gaeilge" toggleGroup="$lang" />
+        </Menu>
+    </Menu>
+</MenuBar>
